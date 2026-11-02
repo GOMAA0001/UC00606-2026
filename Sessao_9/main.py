@@ -28,7 +28,7 @@ def main():
 
     se possivel importar time
 
-    LêEste codígo não e o final pois acredito que presisse de alteração e tem de ser analisado o IP do utilizador e o Email.
+    Lê o IP do utilizador e o Email.
     Lê e Cria um hash da palavra passe do utilizador.
     Pedir para o utilizador escrever a mesma Palavra-Passe.
 
