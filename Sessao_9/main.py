@@ -8,12 +8,12 @@ def bool_to_text(valor: bool) -> str:
     """Converte um booleano em texto.
 
     Parâmetros:
-        valor (bool): valor a converter.
+        valor (bool): valor a analisar.
 
     Retorno:
         str: "Sim" se for True, "Não" se for False.
     """
-    if valor:
+    if (valor):
         return "Sim"
     else:
         return "Não"
