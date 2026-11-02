@@ -2,7 +2,7 @@
 
 from hide_IP import mask_ip
 from check_email import is_corporate_email
-from password import hash_password,check_password
+from password import hash_password, check_password
 
 def bool_to_text(_bool:bool):
     if(_bool):
@@ -11,7 +11,7 @@ def bool_to_text(_bool:bool):
         return "Não"
 
 def main():
-    """Pede password, email e IP ao utilizador e mostra os resultados.
+    """Pede IP, email e password ao utilizador e mostra os resultados.
 
     Mostra o hash SHA-256 da password, se o email é corporativo
     e o IP mascarado. Todas as variáveis são locais.
@@ -21,7 +21,7 @@ def main():
     masked_ip = mask_ip(input("\nEscreva o seu IP: "))
     email = input("\nEscreva o seu Email: ")
     password_hashed = hash_password(input("\nEscreva a sua Palavra-Passe: "))
-    same_hash = check_password(input("\nComfirme a sua Palavra-Passe: "),password_hashed)
+    same_hash = check_password(input("\nConfirme a sua Palavra-Passe: "),password_hashed)
 
     # Resultados
     print("\nResultados:")
