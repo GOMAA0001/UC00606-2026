@@ -11,17 +11,19 @@ def main():
     Mostra o hash SHA-256 da password, se o email é corporativo
     e o IP mascarado. Todas as variáveis são locais.
     """
-    """
+   
     # Dados introduzidos pelo utilizador (variáveis locais)
     pwd = input("Password: ")
     email = input("Email: ")
     ip = input("IP: ")
 
+    pwd_hash = hash_password(pwd)
+
     # Resultados
-    print("Hash da password:", hash_password(pwd))
+    print("Hash da password:", pwd_hash)
     print("Email corporativo:", is_corporate_email(email))
     print("IP mascarado:", mask_ip(ip))
-    """
+   
 
     """
     Este Codígo é um sign in simples
@@ -38,6 +40,7 @@ def main():
 
     Se tudo estiver certo informa o utilizador que a conta foi criada con sucesso.
     """
+    """
     masked_ip = mask_ip(input("\nEscreva o seu IP: "))
     email = input("\nEscreva o seu Email: ")
     password_hashed = hash_password(input("\nEscreva a sua Palavra-Passe: "))
@@ -53,5 +56,11 @@ def main():
         print("Conta criada com sucesso.\n" \
         f"IP: {masked_ip}\n" \
         f"Email: {email}")
+"""
+# Extra: confirmação da password
+    pwd2 = input("Confirme a password: ")
+    print("Passwords iguais:", check_password(pwd2, pwd_hash))
 
 main()
+
+
