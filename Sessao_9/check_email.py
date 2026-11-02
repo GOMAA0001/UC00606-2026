@@ -1,5 +1,6 @@
 """Função para verificar se um email pertence ao domínio corporativo."""
 
+
 def is_corporate_email(email: str, dominio: str = "empresa.pt") -> bool:
     """Verifica se um email pertence ao domínio corporativo.
 
