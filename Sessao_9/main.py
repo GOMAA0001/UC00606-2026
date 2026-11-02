@@ -4,6 +4,11 @@ from hide_IP import mask_ip
 from check_email import is_corporate_email
 from password import hash_password,check_password
 
+def bool_to_text(_bool:bool):
+    if(_bool):
+        return "Sim"
+    else:
+        return "Não"
 
 def main():
     """Pede password, email e IP ao utilizador e mostra os resultados.
@@ -13,16 +18,17 @@ def main():
     """
    
     # Dados introduzidos pelo utilizador (variáveis locais)
-    pwd = input("Password: ")
-    email = input("Email: ")
-    ip = input("IP: ")
-
-    pwd_hash = hash_password(pwd)
+    masked_ip = mask_ip(input("\nEscreva o seu IP: "))
+    email = input("\nEscreva o seu Email: ")
+    password_hashed = hash_password(input("\nEscreva a sua Palavra-Passe: "))
+    same_hash = check_password(input("\nComfirme a sua Palavra-Passe: "),password_hashed)
 
     # Resultados
-    print("Hash da password:", pwd_hash)
-    print("Email corporativo:", is_corporate_email(email))
-    print("IP mascarado:", mask_ip(ip))
+    print("\nResultados:")
+    print(f"\nIP mascarado: {masked_ip}")
+    print(f"\nEmail corporativo: {bool_to_text(is_corporate_email(email))}")
+    print(f"\nHash da password: {password_hashed}")
+    print(f"\nA password é igual: {bool_to_text(same_hash)}")
    
 
     """
@@ -39,27 +45,17 @@ def main():
     Verifica se os hash das Palavra-Passes são iguais.
 
     Se tudo estiver certo informa o utilizador que a conta foi criada con sucesso.
-    """
-    """
-    masked_ip = mask_ip(input("\nEscreva o seu IP: "))
-    email = input("\nEscreva o seu Email: ")
-    password_hashed = hash_password(input("\nEscreva a sua Palavra-Passe: "))
-    same_hash = check_password(input("\nComfirme a sua Palavra-Passe: "),password_hashed)
 
-    if(masked_ip == "IP inválido"):
-        print("O IP esta inválido")
-    elif(is_corporate_email(email)==False):
-        print("O Email é inválido")
-    elif(not same_hash):
-        print("As Palavra-Passes não correspondem")
-    else:
-        print("Conta criada com sucesso.\n" \
-        f"IP: {masked_ip}\n" \
-        f"Email: {email}")
-"""
-# Extra: confirmação da password
+    pwd = input("Password: ")
+    email = input("Email: ")
+    ip = input("IP: ")
+
     pwd2 = input("Confirme a password: ")
     print("Passwords iguais:", check_password(pwd2, pwd_hash))
+    
+    """
+
+
 
 main()
 
