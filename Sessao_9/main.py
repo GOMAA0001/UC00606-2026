@@ -4,8 +4,16 @@ from hide_IP import mask_ip
 from check_email import is_corporate_email
 from password import hash_password, check_password
 
-def bool_to_text(_bool:bool):
-    if(_bool):
+def bool_to_text(valor: bool) -> str:
+    """Converte um booleano em texto.
+
+    Parâmetros:
+        valor (bool): valor a converter.
+
+    Retorno:
+        str: "Sim" se for True, "Não" se for False.
+    """
+    if valor:
         return "Sim"
     else:
         return "Não"
