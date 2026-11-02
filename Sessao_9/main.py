@@ -30,33 +30,6 @@ def main():
     print(f"\nHash da password: {password_hashed}")
     print(f"\nA password é igual: {bool_to_text(same_hash)}")
    
-
-    """
-    Este Codígo é um sign in simples
-
-    se possivel importar time
-
-    Lê o IP do utilizador e o Email.
-    Lê e Cria um hash da palavra passe do utilizador.
-    Pedir para o utilizador escrever a mesma Palavra-Passe.
-
-    Verifica se IP é valído.
-    Verifica se o Email é da Empresa.
-    Verifica se os hash das Palavra-Passes são iguais.
-
-    Se tudo estiver certo informa o utilizador que a conta foi criada con sucesso.
-
-    pwd = input("Password: ")
-    email = input("Email: ")
-    ip = input("IP: ")
-
-    pwd2 = input("Confirme a password: ")
-    print("Passwords iguais:", check_password(pwd2, pwd_hash))
-    
-    """
-
-
-
 main()
 
 
