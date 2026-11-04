@@ -1,0 +1,21 @@
+Primeiro, organizar o programa em quatro ficheiros: password.py, com as funções hash_password e check_password; check_email.py, com a função is_corporate_email; hide_IP.py, com a função mask_ip; e main.py, com as funções bool_to_text e main. Nenhum ficheiro usa variáveis globais.
+
+A função hash_password recebe uma Palavra-Passe e devolve o seu hash SHA-256 em hexadecimal. A Palavra-Passe só existe como parâmetro da função.
+
+A função check_password recebe uma Palavra-Passe e um hash. Calcula o hash da Palavra-Passe e compara-o com o hash recebido. Se forem iguais, devolve True; caso contrário, devolve False.
+
+A função mask_ip recebe um IP e divide-o pelos pontos. Se tiver 4 partes (formato a.b.c.d), devolve o IP mascarado no formato a.***.***.d. Em qualquer outro formato, devolve "IP inválido".
+
+A função is_corporate_email recebe um email e um domínio (por omissão, "empresa.pt"). Se o email terminar em @dominio, devolve True; caso contrário, devolve False.
+
+A função bool_to_text recebe um valor booleano e devolve "Sim" se for True ou "Não" se for False.
+
+A função main coordena o programa, usando apenas variáveis locais:
+1. Pede ao utilizador o IP e guarda o resultado de mask_ip (o IP mascarado).
+2. Pede ao utilizador o email.
+3. Pede ao utilizador a Palavra-Passe e guarda o seu hash, calculado com hash_password.
+4. Pede ao utilizador que confirme a Palavra-Passe e usa check_password para verificar se corresponde ao hash guardado.
+5. Mostra o título "Resultados:" e, de seguida, o IP mascarado, se o email é corporativo ("Sim" ou "Não"), o hash da Palavra-Passe e se a confirmação da Palavra-Passe é igual ("Sim" ou "Não").
+
+No fim, chamar a função main para o programa começar.
+Fim do programa.
