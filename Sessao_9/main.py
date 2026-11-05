@@ -2,7 +2,7 @@
 
 from hide_IP import mask_ip
 from check_email import is_corporate_email
-from password import hash_password, check_password
+from password import hash_password
 
 def bool_to_text(valor: bool) -> str:
     """Converte um booleano em texto.
@@ -29,14 +29,14 @@ def main():
     masked_ip = mask_ip(input("\nEscreva o seu IP: "))
     email = input("\nEscreva o seu Email: ")
     password_hashed = hash_password(input("\nEscreva a sua Palavra-Passe: "))
-    same_hash = check_password(input("\nConfirme a sua Palavra-Passe: "),password_hashed)
+    #same_hash = check_password(input("\nConfirme a sua Palavra-Passe: "),password_hashed)
 
     # Resultados
     print("\nResultados:")
     print(f"\nIP mascarado: {masked_ip}")
     print(f"\nEmail corporativo: {bool_to_text(is_corporate_email(email))}")
     print(f"\nHash da password: {password_hashed}")
-    print(f"\nA password é igual: {bool_to_text(same_hash)}")
+    #print(f"\nA password é igual: {bool_to_text(same_hash)}")
    
 main()
 
