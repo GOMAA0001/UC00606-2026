@@ -1,7 +1,23 @@
-
 flowchart TD
-    A([Inicío]) -> B[Ler o IP]
-    B --> C[Ler Email]
-    C --> D[Ler Palavra-Passe]
-    D --> E[Confirmar Palavra-Passe]
-    
+    A([Início]) --> B[ Chamar main ]
+    B --> C[ Ler ip ]
+    C --> D[ Chamar mask_ip ]
+    D --> E{ ip tem 4 partes? }
+    E -- Sim --> F[ masked_ip = a...d ]
+    E -- Não --> G[ masked_ip = IP inválido ]
+    F --> H[ Ler email ]
+    G --> H
+    H --> I[ Ler pwd ]
+    I --> J[ Chamar hash_password ]
+    J --> K[ password_hashed = SHA-256 de pwd ]
+    K --> L[ Escrever Resultados ]
+    L --> M[ Escrever IP mascarado ]
+    M --> N[ Chamar is_corporate_email ]
+    N --> O{ email termina em @empresa.pt? }
+    O -- Sim --> P[ Chamar bool_to_text com Verdadeiro ]
+    O -- Não --> Q[ Chamar bool_to_text com Falso ]
+    P --> R[ Escrever Email corporativo Sim ]
+    Q --> S[ Escrever Email corporativo Não ]
+    R --> T[ Escrever Hash da password ]
+    S --> T
+    T --> U([Fim])
